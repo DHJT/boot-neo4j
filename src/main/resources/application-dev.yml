@@ -5,15 +5,20 @@ server:
 spring:
   application:
     name: boot_neo4j
+  neo4j:
+    uri: bolt://127.0.0.1:7687
+    pool:
+      metrics-enabled: true
+      log-leaked-sessions: true
+    authentication:
+      username: neo4j
+      password: neo4jneo4j
+      
   data:
     neo4j:
       repositories:
-        enabled: true
-      embedded:
-        enabled: true
-      uri: file:/D:/Workspaces/TestTemp/neo4j-db/graph.db  # file:/var/tmp/graph.db bolt://127.0.0.1:7687 file:/Workspaces/TestTemp/neo4j-db/graph.db
-      username: neo4j
-      password: neo4jneo4j
+        type: auto
+      database: neo4j
 logging:
   level:
     org.springframework.data.neo4j: DEBUG
