@@ -1,9 +1,8 @@
 package tech.dhjt.demo.neo4j.entity;
 
-import org.springframework.data.neo4j.core.schema.GeneratedValue;
-import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 import org.springframework.data.neo4j.core.schema.Property;
+import org.springframework.data.neo4j.core.schema.RelationshipId;
 
 import lombok.Builder;
 import lombok.Data;
@@ -13,8 +12,7 @@ import lombok.Data;
 @Builder
 public class Dept {
 
-    @Id
-    @GeneratedValue
+    @RelationshipId
     private Long id;
 
     @Property(name = "deptName")

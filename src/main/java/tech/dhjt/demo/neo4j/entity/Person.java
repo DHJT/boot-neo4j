@@ -2,9 +2,9 @@ package tech.dhjt.demo.neo4j.entity;
 
 import java.util.List;
 
-import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 import org.springframework.data.neo4j.core.schema.Relationship;
+import org.springframework.data.neo4j.core.schema.RelationshipId;
 
 import lombok.Builder;
 import lombok.Data;
@@ -14,7 +14,7 @@ import lombok.Data;
 @Builder
 public class Person {
 
-    @Id
+    @RelationshipId
     private Long id;
 
     private String name;
